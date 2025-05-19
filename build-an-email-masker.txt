@@ -1,0 +1,27 @@
+** start of script.js **
+
+function maskEmail(email) {
+  // Find the index of '@' to separate username and domain
+  const atIndex = email.indexOf('@');
+  
+  // Extract username and domain parts
+  const username = email.slice(0, atIndex);
+  const domain = email.slice(atIndex);
+  
+  // Mask the username: keep first and last character, replace middle with asterisks
+  const maskedUsername = 
+    username[0] + '*'.repeat(username.length - 2) + username[username.length - 1];
+  
+  // Combine masked username and domain
+  return maskedUsername + domain;
+}
+
+// Declare email variable with your test email
+const email = "apple.pie@example.com";
+
+// Call maskEmail and log the result
+console.log(maskEmail(email)); // Output: a*******e@example.com
+
+
+** end of script.js **
+
